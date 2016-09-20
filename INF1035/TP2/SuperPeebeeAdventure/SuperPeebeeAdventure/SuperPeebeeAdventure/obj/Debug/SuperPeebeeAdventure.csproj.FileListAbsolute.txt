@@ -1,0 +1,16 @@
+C:\Users\Pierluc\Documents\Visual Studio 2015\Projects\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\bin\Debug\SuperPeebeeAdventure.exe.config
+C:\Users\Pierluc\Documents\Visual Studio 2015\Projects\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\bin\Debug\SuperPeebeeAdventure.exe
+C:\Users\Pierluc\Documents\Visual Studio 2015\Projects\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\bin\Debug\SuperPeebeeAdventure.pdb
+C:\Users\Pierluc\Documents\Visual Studio 2015\Projects\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\bin\Debug\Engine.dll
+C:\Users\Pierluc\Documents\Visual Studio 2015\Projects\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\bin\Debug\Engine.pdb
+C:\Users\Pierluc\Documents\Visual Studio 2015\Projects\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\obj\Debug\SuperPeebeeAdventure.csprojResolveAssemblyReference.cache
+C:\Users\Pierluc\Documents\Visual Studio 2015\Projects\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\obj\Debug\SuperPeebeeAdventure.Properties.Resources.resources
+C:\Users\Pierluc\Documents\Visual Studio 2015\Projects\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\obj\Debug\SuperPeebeeAdventure.csproj.GenerateResource.Cache
+C:\Users\Pierluc\Documents\Visual Studio 2015\Projects\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\obj\Debug\SuperPeebeeAdventure.exe
+C:\Users\Pierluc\Documents\Visual Studio 2015\Projects\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\obj\Debug\SuperPeebeeAdventure.pdb
+C:\Users\Pierluc\Documents\Visual Studio 2015\Projects\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\obj\Debug\SuperPeebeeAdventure.SuperPeebeeAdventure.resources
+C:\Users\Pierluc\Documents\Visual Studio 2015\Projects\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\obj\Debug\SuperPeebeeAdventure.CharacterCreation.resources
+C:\Users\Pierluc\Documents\Visual Studio 2015\Projects\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\obj\Debug\SuperPeebeeAdventure.MainMenu.resources
+C:\Users\Vincent\Documents\INF1035\TP2\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\bin\Debug\SuperPeebeeAdventure.exe.config
+C:\Users\Vincent\Documents\INF1035\TP2\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\obj\Debug\SuperPeebeeAdventure.exe
+C:\Users\Vincent\Documents\INF1035\TP2\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\obj\Debug\SuperPeebeeAdventure.pdb

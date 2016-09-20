@@ -1,0 +1,13 @@
+C:\Users\Pierluc\Documents\Visual Studio 2015\Projects\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\bin\Release\SuperPeebeeAdventure.exe.config
+C:\Users\Pierluc\Documents\Visual Studio 2015\Projects\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\bin\Release\SuperPeebeeAdventure.exe
+C:\Users\Pierluc\Documents\Visual Studio 2015\Projects\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\bin\Release\SuperPeebeeAdventure.pdb
+C:\Users\Pierluc\Documents\Visual Studio 2015\Projects\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\bin\Release\Engine.dll
+C:\Users\Pierluc\Documents\Visual Studio 2015\Projects\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\bin\Release\Engine.pdb
+C:\Users\Pierluc\Documents\Visual Studio 2015\Projects\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\obj\Release\SuperPeebeeAdventure.csprojResolveAssemblyReference.cache
+C:\Users\Pierluc\Documents\Visual Studio 2015\Projects\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\obj\Release\SuperPeebeeAdventure.Properties.Resources.resources
+C:\Users\Pierluc\Documents\Visual Studio 2015\Projects\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\obj\Release\SuperPeebeeAdventure.SuperPeebeeAdventure.resources
+C:\Users\Pierluc\Documents\Visual Studio 2015\Projects\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\obj\Release\SuperPeebeeAdventure.csproj.GenerateResource.Cache
+C:\Users\Pierluc\Documents\Visual Studio 2015\Projects\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\obj\Release\SuperPeebeeAdventure.exe
+C:\Users\Pierluc\Documents\Visual Studio 2015\Projects\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\obj\Release\SuperPeebeeAdventure.pdb
+C:\Users\Pierluc\Documents\Visual Studio 2015\Projects\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\obj\Release\SuperPeebeeAdventure.CharacterCreation.resources
+C:\Users\Pierluc\Documents\Visual Studio 2015\Projects\SuperPeebeeAdventure\SuperPeebeeAdventure\SuperPeebeeAdventure\obj\Release\SuperPeebeeAdventure.MainMenu.resources
