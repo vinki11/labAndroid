@@ -5,18 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <fragment
+    <LinearLayout
         android:layout_width="0dp"
         android:layout_weight="1"
-        android:layout_height="match_parent"
-        android:name="com.example.vincent.lab1.fragment.ListeFragment"
-        android:id="@+id/listeFragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/liste_fragment_container">
 
-    <fragment
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="0dp"
         android:layout_weight="1"
-        android:layout_height="match_parent"
-        android:name="com.example.vincent.lab1.fragment.PlaceHolderFragment"
-        android:id="@+id/placeholderlisteFragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/map_fragment_container">
+
+    </LinearLayout>
 
 </LinearLayout>
