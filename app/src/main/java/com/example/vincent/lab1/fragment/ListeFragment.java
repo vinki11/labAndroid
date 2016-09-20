@@ -2,6 +2,7 @@ package com.example.vincent.lab1.fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,17 @@ import com.example.vincent.lab1.adapter.ExpandListAdapter;
 import com.example.vincent.lab1.model.Categorie;
 import com.example.vincent.lab1.model.Poi;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.StringWriter;
+import java.io.UnsupportedEncodingException;
+import java.io.Writer;
 import java.util.ArrayList;
 
 /**
@@ -23,14 +35,44 @@ import java.util.ArrayList;
  */
 public class ListeFragment extends Fragment {
 
-    private ExpandListAdapter ExpAdapter;
-    private ArrayList<Categorie> ExpListItems;
-    private ExpandableListView ExpandList;
+    private ExpandListAdapter expAdapter;
+    private ArrayList<Categorie> expListItems;
+    private ExpandableListView expandList;
+    private String jsonData = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //Lire le fichier json
+        InputStream is = getResources().openRawResource(R.raw.listedata);
+        Writer writer = new StringWriter();
+        char[] buffer = new char[1024];
+
+        //C'est dégeu les 2 try catch mais Android studio chialait si je faisais pas ca comme ca...
+        try {
+            Reader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+            int n;
+            while ((n = reader.read(buffer)) != -1) {
+                writer.write(buffer, 0, n);
+            }
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                is.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+       jsonData = writer.toString();
+
+
+
+       // Log.i("json string jsonData : ", jsonData);
     }
 
 
@@ -45,20 +87,20 @@ public class ListeFragment extends Fragment {
     public void onResume() {
         super.onResume();
 
-        ExpandList = (ExpandableListView) getView().findViewById(R.id.listView_data);
-        ExpListItems = SetStandardGroups();
-        ExpAdapter = new ExpandListAdapter(getActivity(), ExpListItems);
-        ExpandList.setAdapter(ExpAdapter);
+        expandList = (ExpandableListView) getView().findViewById(R.id.listView_data);
+        expListItems = SetStandardGroups();
+        expAdapter = new ExpandListAdapter(getActivity(), expListItems);
+        expandList.setAdapter(expAdapter);
 
-        ExpandList.setOnChildClickListener(new OnChildClickListener() {
+        expandList.setOnChildClickListener(new OnChildClickListener() {
 
             @Override
             public boolean onChildClick(ExpandableListView parent, View v,
                                         int groupPosition, int childPosition, long id) {
 
-                String group_name = ExpListItems.get(groupPosition).getNom();
+                String group_name = expListItems.get(groupPosition).getNom();
 
-                ArrayList<Poi> ch_list = ExpListItems.get(
+                ArrayList<Poi> ch_list = expListItems.get(
                         groupPosition).getItems();
 
                 String child_name = ch_list.get(childPosition).getNom();
@@ -69,21 +111,21 @@ public class ListeFragment extends Fragment {
             }
         });
 
-        ExpandList.setOnGroupExpandListener(new OnGroupExpandListener() {
+        expandList.setOnGroupExpandListener(new OnGroupExpandListener() {
 
             @Override
             public void onGroupExpand(int groupPosition) {
-                String group_name = ExpListItems.get(groupPosition).getNom();
+                String group_name = expListItems.get(groupPosition).getNom();
                 showToastMsg(group_name + "\n Expanded");
 
             }
         });
 
-        ExpandList.setOnGroupCollapseListener(new OnGroupCollapseListener() {
+        expandList.setOnGroupCollapseListener(new OnGroupCollapseListener() {
 
             @Override
             public void onGroupCollapse(int groupPosition) {
-                String group_name = ExpListItems.get(groupPosition).getNom();
+                String group_name = expListItems.get(groupPosition).getNom();
                 showToastMsg(group_name + "\n Expanded");
 
             }
@@ -92,8 +134,27 @@ public class ListeFragment extends Fragment {
 
     //C'est hardcodé et c'est laid mais une chose à la fois on loadera le JSON après
     public ArrayList<Categorie> SetStandardGroups() {
+        JSONArray jsonArray = null;
 
+        ArrayList<String> test = new ArrayList<String>();
         ArrayList<Categorie> group_list = new ArrayList<Categorie>();
+
+        try {
+            jsonArray = new JSONArray(jsonData);
+
+            if (jsonArray != null) {
+                for (int i=0;i<jsonArray.length();i++){
+                    Log.i("SUP dude", i + " tortue " + jsonArray.get(i).toString());
+                }
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+
+
+
         ArrayList<Poi> child_list;
 
         // Setting Group 1
