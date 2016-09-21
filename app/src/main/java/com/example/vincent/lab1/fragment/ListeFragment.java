@@ -33,7 +33,7 @@ import java.util.ArrayList;
  * Created by Vincent on 2016-09-19.
  */
 public class ListeFragment extends Fragment {
-
+    ///fix #2
     private ExpandListAdapter expAdapter;
     private ArrayList<Categorie> expListItems;
     private ExpandableListView expandList;
