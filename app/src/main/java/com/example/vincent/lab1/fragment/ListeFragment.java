@@ -2,7 +2,6 @@ package com.example.vincent.lab1.fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -88,7 +87,7 @@ public class ListeFragment extends Fragment {
         super.onResume();
 
         expandList = (ExpandableListView) getView().findViewById(R.id.listView_data);
-        expListItems = SetStandardGroups();
+        expListItems = SetListe();
         expAdapter = new ExpandListAdapter(getActivity(), expListItems);
         expandList.setAdapter(expAdapter);
 
@@ -132,19 +131,43 @@ public class ListeFragment extends Fragment {
         });
     }
 
-    //C'est hardcodé et c'est laid mais une chose à la fois on loadera le JSON après
-    public ArrayList<Categorie> SetStandardGroups() {
+
+    public ArrayList<Categorie> SetListe() {
         JSONArray jsonArray = null;
 
-        ArrayList<String> test = new ArrayList<String>();
+
         ArrayList<Categorie> group_list = new ArrayList<Categorie>();
 
         try {
             jsonArray = new JSONArray(jsonData);
 
+            // On va chercher le nom des catégorie
             if (jsonArray != null) {
                 for (int i=0;i<jsonArray.length();i++){
-                    Log.i("SUP dude", i + " tortue " + jsonArray.get(i).toString());
+                    // On va chercher le nom des catégorie
+                    String category_nom = jsonArray.getJSONObject(i).getString("category");
+
+                    // On créer la catégorie
+                    Categorie categorie = new Categorie();
+                    categorie.setNom(category_nom);
+
+                    //On assigne les enfants (poi)
+                    ArrayList<Poi> child_list;
+                    child_list = new ArrayList<Poi>();
+
+                    JSONArray jsonChildArray = jsonArray.getJSONObject(i).getJSONArray("list");
+                    for (int j = 0; j <jsonChildArray.length();j++)
+                    {
+                        String child_nom = jsonChildArray.getJSONObject(j).getString("name");
+                        Poi poi = new Poi();
+                        poi.setNom(child_nom);
+                        child_list.add(poi);
+                    }
+
+                    categorie.setItems(child_list);
+
+                    //On ajoute la catégorie à la liste de catégorie
+                    group_list.add(categorie);
                 }
             }
 
@@ -152,56 +175,6 @@ public class ListeFragment extends Fragment {
             e.printStackTrace();
             throw new RuntimeException(e);
         }
-
-
-
-        ArrayList<Poi> child_list;
-
-        // Setting Group 1
-        child_list = new ArrayList<Poi>();
-        Categorie gru1 = new Categorie();
-        gru1.setNom("Apple");
-
-        Poi ch1_1 = new Poi();
-        ch1_1.setNom("Iphone");
-        child_list.add(ch1_1);
-
-        Poi ch1_2 = new Poi();
-        ch1_2.setNom("ipad");
-        child_list.add(ch1_2);
-
-        Poi ch1_3 = new Poi();
-        ch1_3.setNom("ipod");
-        child_list.add(ch1_3);
-
-        gru1.setItems(child_list);
-
-        // Setting Categorie 2
-        child_list = new ArrayList<Poi>();
-        Categorie gru2 = new Categorie();
-        gru2.setNom("SAMSUNG");
-
-        Poi ch2_1 = new Poi();
-        ch2_1.setNom("Galaxy Grand");
-        child_list.add(ch2_1);
-
-        Poi ch2_2 = new Poi();
-        ch2_2.setNom("Galaxy Note");
-        child_list.add(ch2_2);
-
-        Poi ch2_3 = new Poi();
-        ch2_3.setNom("Galaxy Mega");
-        child_list.add(ch2_3);
-
-        Poi ch2_4 = new Poi();
-        ch2_4.setNom("Galaxy Neo");
-        child_list.add(ch2_4);
-
-        gru2.setItems(child_list);
-
-        //listing all groups
-        group_list.add(gru1);
-        group_list.add(gru2);
 
         return group_list;
     }
