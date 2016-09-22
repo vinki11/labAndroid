@@ -16,14 +16,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction fragmentTransaction =
-                fragmentManager.beginTransaction();
-        ListeFragment listeFragment = new ListeFragment();
-        PlaceHolderFragment mapFragment = new PlaceHolderFragment();
-        fragmentTransaction.add(R.id.liste_fragment_container, listeFragment);
-        fragmentTransaction.add(R.id.map_fragment_container, mapFragment);
-        fragmentTransaction.commit();
+        //Est-ce une manière convennable de gérer ca ?
+        if (savedInstanceState == null)
+        {
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction =
+                    fragmentManager.beginTransaction();
+            ListeFragment listeFragment = new ListeFragment();
+            PlaceHolderFragment mapFragment = new PlaceHolderFragment();
+            fragmentTransaction.add(R.id.liste_fragment_container, listeFragment);
+            fragmentTransaction.add(R.id.map_fragment_container, mapFragment);
+            fragmentTransaction.commit();
+        }
+
+
+
 
     }
 
