@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.example.vincent.lab1.R;
 import com.example.vincent.lab1.fragment.ListeFragment;
-import com.example.vincent.lab1.fragment.MapFragment;
+import com.example.vincent.lab1.fragment.GMapFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,9 +23,9 @@ public class MainActivity extends AppCompatActivity {
             FragmentTransaction fragmentTransaction =
                     fragmentManager.beginTransaction();
             ListeFragment listeFragment = new ListeFragment();
-            MapFragment mapFragment = new MapFragment();
+            GMapFragment GMapFragment = new GMapFragment();
             fragmentTransaction.add(R.id.liste_fragment_container, listeFragment);
-            fragmentTransaction.add(R.id.map_fragment_container, mapFragment);
+            fragmentTransaction.add(R.id.map_fragment_container, GMapFragment);
             fragmentTransaction.commit();
         }
 

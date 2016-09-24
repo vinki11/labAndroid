@@ -14,7 +14,7 @@ import com.google.android.gms.maps.MapsInitializer;
 /**
  * Created by Vincent on 2016-09-21.
  */
-public class MapFragment extends Fragment {
+public class GMapFragment extends Fragment {
 
     MapView mMapView;
     private GoogleMap googleMap;
