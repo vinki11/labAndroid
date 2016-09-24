@@ -9,7 +9,7 @@ import com.example.vincent.lab1.R;
 import com.example.vincent.lab1.fragment.ListeFragment;
 import com.example.vincent.lab1.fragment.GMapFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
