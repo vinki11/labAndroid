@@ -2,6 +2,7 @@ package com.example.vincent.lab1.fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -97,14 +98,20 @@ public class ListeFragment extends Fragment {
             public boolean onChildClick(ExpandableListView parent, View v,
                                         int groupPosition, int childPosition, long id) {
 
-                String group_name = expListItems.get(groupPosition).getNom();
+                //String group_name = expListItems.get(groupPosition).getNom();
 
                 ArrayList<Poi> ch_list = expListItems.get(
                         groupPosition).getItems();
 
-                String child_name = ch_list.get(childPosition).getNom();
+                double lat = ch_list.get(childPosition).getLattitude();
+                double lon = ch_list.get(childPosition).getLongitude();
 
-                showToastMsg(group_name + "\n" + child_name);
+                Log.i("TEST YOYOYOYOY", "lat : " + lat + " lon : " + lon);
+
+                //String child_name = ch_list.get(childPosition).getNom();
+
+
+                //showToastMsg(group_name + "\n" + child_name);
 
                 return false;
             }
@@ -159,9 +166,15 @@ public class ListeFragment extends Fragment {
                     for (int j = 0; j <jsonChildArray.length();j++)
                     {
                         String child_nom = jsonChildArray.getJSONObject(j).getString("name");
+                        JSONArray latlon = jsonChildArray.getJSONObject(j).getJSONArray("latlon");
+                        double latittude = (Double)latlon.get(0);
+                        double longitude = (Double)latlon.get(1);
                         Poi poi = new Poi();
                         poi.setNom(child_nom);
+                        poi.setLattitude(latittude);
+                        poi.setLongitude(longitude);
                         child_list.add(poi);
+
                     }
 
                     categorie.setItems(child_list);
