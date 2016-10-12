@@ -75,4 +75,12 @@ public class GMapFragment extends Fragment implements OnMapReadyCallback {
 
     }
 
+    public void setPOICoords(double lat, double lon)
+    {
+        CameraPosition cameraPosition = new CameraPosition.Builder()
+                .target(new LatLng(lat, lon)).zoom(16).build();
+        googleMap.animateCamera(CameraUpdateFactory
+                .newCameraPosition(cameraPosition));
+    }
+
 }

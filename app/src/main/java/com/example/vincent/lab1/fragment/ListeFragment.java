@@ -13,6 +13,7 @@ import android.widget.ExpandableListView.OnGroupExpandListener;
 import android.widget.Toast;
 
 import com.example.vincent.lab1.R;
+import com.example.vincent.lab1.activity.MainActivity;
 import com.example.vincent.lab1.adapter.ExpandListAdapter;
 import com.example.vincent.lab1.model.Categorie;
 import com.example.vincent.lab1.model.Poi;
@@ -98,20 +99,15 @@ public class ListeFragment extends Fragment {
             public boolean onChildClick(ExpandableListView parent, View v,
                                         int groupPosition, int childPosition, long id) {
 
-                //String group_name = expListItems.get(groupPosition).getNom();
-
                 ArrayList<Poi> ch_list = expListItems.get(
                         groupPosition).getItems();
 
                 double lat = ch_list.get(childPosition).getLattitude();
                 double lon = ch_list.get(childPosition).getLongitude();
 
-                Log.i("TEST YOYOYOYOY", "lat : " + lat + " lon : " + lon);
+                Log.v("Erreur wtf yoyo", "Hey latlon: " + lat + " - " + lon);
 
-                //String child_name = ch_list.get(childPosition).getNom();
-
-
-                //showToastMsg(group_name + "\n" + child_name);
+                ((MainActivity) getActivity()).setCoords(lat, lon);
 
                 return false;
             }
